@@ -1,0 +1,59 @@
+incident-rca-bot/
+├── README.md
+├── requirements.txt
+├── .env.example
+├── docker-compose.yml
+├── alembic.ini
+├── alembic/
+│   ├── env.py
+│   └── versions/
+│       └── 001_initial_schema.py
+├── src/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── config.py
+│   ├── db/
+│   │   ├── __init__.py
+│   │   ├── database.py
+│   │   ├── models.py
+│   │   └── repository.py
+│   ├── ingestion/
+│   │   ├── __init__.py
+│   │   ├── log_parser.py
+│   │   ├── alert_parser.py
+│   │   └── otel_collector.py
+│   ├── engine/
+│   │   ├── __init__.py
+│   │   ├── rca_engine.py
+│   │   ├── chains/
+│   │   │   ├── __init__.py
+│   │   │   ├── root_cause_chain.py
+│   │   │   ├── impact_chain.py
+│   │   │   ├── prevention_chain.py
+│   │   │   └── postmortem_chain.py
+│   │   ├── agents/
+│   │   │   ├── __init__.py
+│   │   │   └── rca_agent.py
+│   │   ├── memory/
+│   │   │   ├── __init__.py
+│   │   │   └── incident_memory.py
+│   │   └── schemas/
+│   │       ├── __init__.py
+│   │       └── output_schemas.py
+│   ├── ticketing/
+│   │   ├── __init__.py
+│   │   └── ticket_creator.py
+│   ├── telemetry/
+│   │   ├── __init__.py
+│   │   └── tracing.py
+│   └── api/
+│       ├── __init__.py
+│       ├── app.py
+│       └── routes.py
+└── tests/
+    ├── __init__.py
+    ├── conftest.py
+    ├── test_ingestion.py
+    ├── test_engine.py
+    ├── test_chains.py
+    └── test_api.py
